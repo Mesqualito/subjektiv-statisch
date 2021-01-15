@@ -5,9 +5,14 @@
     --light-grey: #eaeded;
 }
 
-@keyframes a-href {
+@keyframes a-change {
     from { color: white; }
     to { color: var(--grey); }
+}
+
+@keyframes grey-cycle {
+    from { color: white;}
+    to { color: black; }
 }
 
 
@@ -40,17 +45,26 @@ hr {
 
 a {
     color: var(--grey);
+    text-decoration: none;
 }
 
 .a-change {
-    text-decoration: blink;
-    animation-name: a-href;
+    animation-name: a-change;
     animation-duration: 8s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     text-shadow: 0 2px 2px var(--grey);
 }
 
-a:visited, a:active {
+.color-cycle {
+    animation-name: grey-cycle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+}
+
+a:active {
     color: var(--light-grey);
 }
 
@@ -68,6 +82,10 @@ a:hover {
     display: grid;
     justify-self: center;
     align-self: center;
+}
+
+.padding-bottom {
+    padding-bottom: 50px;
 }
 
 .start-grid {
